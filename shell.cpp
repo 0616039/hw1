@@ -40,7 +40,7 @@ int main(){
     		ifand = 1;
     		arg[arglen-1] = '\0';
     	}
-    	cout << ifand;
+    	//cout << ifand;
     	ss << arg;
     	argstr = 0;
 		while (ss >> argList[argstr])
@@ -62,6 +62,7 @@ int main(){
 		}
 		else { /* parent process */
 		/* parent will wait for the child to complete */
+			if(ifand != 1)//遇到&就不用wait
 			wait (NULL);
 		}
     }

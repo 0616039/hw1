@@ -1,0 +1,5 @@
+total 108
+-rw-r--r-- 1 luyw0621 cs     0 Sep 29 15:35 a.txt
+-rwxr-xr-x 1 luyw0621 cs 98480 Sep 29 15:25 shell
+-rw-r--r-- 1 luyw0621 cs  1457 Sep 29 15:25 shell.cpp
+-rw-r--r-- 1 luyw0621 cs     0 Sep 29 15:35 test.text
