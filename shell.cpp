@@ -24,7 +24,7 @@ int main(){
 	stringstream ss;
 	string arg;
 	int arglen;
-	int and;
+	int ifand;
 	int argstr;
 
     while (1){
@@ -35,18 +35,19 @@ int main(){
         cout<<SHELLNAME; // 输出>
     	getline(cin, arg);
     	arglen = arg.length();
-    	if(arg[arglen-1] == "&"){
-    		and = 1;
-    		arg[arglen-1] = "\0";
+	ifand = 0;
+    	if(arg[arglen-1] == '&'){
+    		ifand = 1;
+    		arg[arglen-1] = '\0';
     	}
-    	cout << and;
+    	cout << ifand;
     	ss << arg;
     	argstr = 0;
 		while (ss >> argList[argstr])
 		{
 		    argstr++;
 		}
-		if(and == 1)
+		if(ifand == 1)
 			argList[argstr-1] = NULL;
 		else
 			argList[argstr] = NULL;
@@ -57,7 +58,7 @@ int main(){
 	  		exit(-1);
 		}
 		else if (pid == 0) { /* child process */
-			execlp("/bin/ls", "ls", NULL);
+			execvp(argList[0], argList);
 		}
 		else { /* parent process */
 		/* parent will wait for the child to complete */
